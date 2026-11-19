@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lancer clock</title>
+<link rel="stylesheet" href="hud.css">
+</head>
+<body>
+<div id="clock"></div>
+
+<button id="move" class="ctl" type="button" aria-label="Drag to move this clock" title="Drag to move">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M12 3l-3 3M12 3l3 3M12 21l-3-3M12 21l3-3M3 12l3-3M3 12l3 3M21 12l-3-3M21 12l-3 3"/></svg>
+</button>
+
+<button id="resize" class="ctl" type="button" aria-label="Drag to resize this clock" title="Drag to resize">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 9L9 21M21 15l-6 6M21 3L3 21"/></svg>
+</button>
+
+<div id="gm" class="gm" hidden></div>
+
+<script type="module" src="hud.js"></script>
+</body>
+</html>

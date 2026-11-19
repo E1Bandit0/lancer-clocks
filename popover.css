@@ -129,3 +129,28 @@ button { font: inherit; cursor: pointer; }
 .del { color: var(--dim); font-size: 11px; }
 .del[data-armed] { color: #ff6a60; border-color: #ff6a60; }
 svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: square; }
+
+#mine { display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid var(--line); }
+.note { font-size: 12px; }
+.ghost {
+  min-height: 32px;
+  padding: 0 10px;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--orange);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.ghost:hover { border-color: var(--orange); }
+.legacy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px dashed var(--orange);
+}
+.legacy p { color: var(--text); font-size: 12px; }
+.card.gmonly { border-left-color: var(--dim); }
+.card.gmonly .txt { color: var(--dim); }

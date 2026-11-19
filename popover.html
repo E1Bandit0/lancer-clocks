@@ -9,15 +9,20 @@
 <body>
 <header class="bar"><span class="pre">CLK//</span> Lancer Clocks</header>
 
-<section id="player" hidden>
-  <p>The GM runs the clocks. You can drag a clock to move it and use its corner handles to resize it.</p>
-</section>
-
-<section id="noscene" hidden>
-  <p>Open a scene to add clocks.</p>
+<section id="mine">
+  <p id="playerNote" class="note" hidden>The GM runs the clocks. Hover over a clock, then drag its top-left handle to move it or its bottom-right corner to resize it. Your layout is only on your screen.</p>
+  <div class="row">
+    <label class="check"><input type="checkbox" id="showMine" checked> Show clocks on my screen</label>
+    <button type="button" id="reset" class="ghost">Reset layout</button>
+  </div>
 </section>
 
 <section id="gm" hidden>
+  <div id="legacy" class="legacy" hidden>
+    <p id="legacyText"></p>
+    <button type="button" id="legacyBtn" class="ghost">Remove them</button>
+  </div>
+
   <form id="new">
     <fieldset class="seg">
       <legend>New</legend>
@@ -41,11 +46,12 @@
       <label class="field inline">Segments <select name="segments"></select></label>
       <label class="check" data-only="progress"><input type="checkbox" name="countdown"> Countdown</label>
     </div>
+    <label class="check"><input type="checkbox" name="shown" checked> Players see it straight away</label>
 
-    <button type="submit" class="primary">Place on map</button>
+    <button type="submit" class="primary">Add clock</button>
   </form>
 
-  <h2>On this map</h2>
+  <h2>Clocks in this room</h2>
   <ul id="list"></ul>
 </section>
 

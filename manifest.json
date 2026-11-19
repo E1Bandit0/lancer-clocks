@@ -1,9 +1,9 @@
 {
   "name": "Lancer Clocks",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "manifest_version": 1,
   "author": "Random",
-  "description": "Lightweight progress clocks and score ladders for Lancer. Synced, movable, no effects.",
+  "description": "Lightweight progress clocks and score ladders for Lancer, shown as small overlays each player can move and resize.",
   "icon": "/lancer-clocks/icon.svg",
   "background_url": "/lancer-clocks/background.html",
   "action": {
