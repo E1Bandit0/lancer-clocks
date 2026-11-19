@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lancer Clocks</title>
+<link rel="stylesheet" href="popover.css">
+</head>
+<body>
+<header class="bar"><span class="pre">CLK//</span> Lancer Clocks</header>
+
+<section id="player" hidden>
+  <p>The GM runs the clocks. You can drag a clock to move it and use its corner handles to resize it.</p>
+</section>
+
+<section id="noscene" hidden>
+  <p>Open a scene to add clocks.</p>
+</section>
+
+<section id="gm" hidden>
+  <form id="new">
+    <fieldset class="seg">
+      <legend>New</legend>
+      <label><input type="radio" name="kind" value="progress" checked> Clock</label>
+      <label><input type="radio" name="kind" value="score"> Score</label>
+    </fieldset>
+
+    <label class="field" data-only="progress">Label
+      <input name="label" type="text" maxlength="40" placeholder="Dropship ETA">
+    </label>
+    <div class="pair" data-only="score" hidden>
+      <label class="field">Players
+        <input name="pcLabel" type="text" maxlength="40" placeholder="Players">
+      </label>
+      <label class="field">Hostiles
+        <input name="enemyLabel" type="text" maxlength="40" placeholder="Hostiles">
+      </label>
+    </div>
+
+    <div class="row">
+      <label class="field inline">Segments <select name="segments"></select></label>
+      <label class="check" data-only="progress"><input type="checkbox" name="countdown"> Countdown</label>
+    </div>
+
+    <button type="submit" class="primary">Place on map</button>
+  </form>
+
+  <h2>On this map</h2>
+  <ul id="list"></ul>
+</section>
+
+<script type="module" src="popover.js"></script>
+</body>
+</html>
