@@ -4,12 +4,12 @@
   "manifest_version": 1,
   "author": "Random",
   "description": "Lightweight progress clocks and score ladders for Lancer. Synced, movable, no effects.",
-  "icon": "icon.svg",
-  "background_url": "background.html",
+  "icon": "/lancer-clocks/icon.svg",
+  "background_url": "/lancer-clocks/background.html",
   "action": {
     "title": "Lancer Clocks",
-    "icon": "icon.svg",
-    "popover": "popover.html",
+    "icon": "/lancer-clocks/icon.svg",
+    "popover": "/lancer-clocks/popover.html",
     "width": 340,
     "height": 560
   }
