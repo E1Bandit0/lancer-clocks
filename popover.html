@@ -7,53 +7,70 @@
 <link rel="stylesheet" href="popover.css">
 </head>
 <body>
-<header class="bar"><span class="pre">CLK//</span> Lancer Clocks</header>
+<header class="bar">
+  <span class="title"><span class="pre">CLK//</span> Clocks</span>
+  <button type="button" id="size" class="icon" aria-label="Change window size" title="Window size"></button>
+  <button type="button" id="add" class="icon" aria-label="New clock" title="New clock" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+  </button>
+</header>
 
-<section id="mine">
-  <p id="playerNote" class="note" hidden>The GM runs the clocks. Hover over a clock, then drag its top-left handle to move it or its bottom-right corner to resize it. Your layout is only on your screen.</p>
-  <div class="row">
-    <label class="check"><input type="checkbox" id="showMine" checked> Show clocks on my screen</label>
-    <button type="button" id="reset" class="ghost">Reset layout</button>
+<div id="legacy" class="legacy" hidden>
+  <p id="legacyText"></p>
+  <button type="button" id="legacyBtn" class="ghost">Remove them</button>
+</div>
+
+<main id="view">
+  <div class="nav" id="nav" hidden>
+    <button type="button" id="prev" class="icon" aria-label="Previous clock">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <span id="pos" aria-live="polite"></span>
+    <button type="button" id="next" class="icon" aria-label="Next clock">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
   </div>
-</section>
 
-<section id="gm" hidden>
-  <div id="legacy" class="legacy" hidden>
-    <p id="legacyText"></p>
-    <button type="button" id="legacyBtn" class="ghost">Remove them</button>
+  <div class="stage">
+    <div id="clock" class="clock"></div>
+    <span id="tag" class="tag" hidden>NOT PINNED</span>
   </div>
 
-  <form id="new">
-    <fieldset class="seg">
-      <legend>New</legend>
-      <label><input type="radio" name="kind" value="progress" checked> Clock</label>
-      <label><input type="radio" name="kind" value="score"> Score</label>
-    </fieldset>
+  <div id="gmbar" class="gmbar" hidden></div>
+  <p id="empty" class="empty" hidden></p>
+</main>
 
-    <label class="field" data-only="progress">Label
-      <input name="label" type="text" maxlength="40" placeholder="Dropship ETA">
+<form id="form" hidden>
+  <h2 id="formTitle">New clock</h2>
+  <fieldset class="seg" id="kindSet">
+    <legend>Type</legend>
+    <label><input type="radio" name="kind" value="progress" checked> Clock</label>
+    <label><input type="radio" name="kind" value="score"> Score</label>
+  </fieldset>
+
+  <label class="field" data-only="progress">Label
+    <input name="label" type="text" maxlength="40" placeholder="Dropship ETA">
+  </label>
+  <div class="pair" data-only="score" hidden>
+    <label class="field">Players
+      <input name="pcLabel" type="text" maxlength="40" placeholder="Players">
     </label>
-    <div class="pair" data-only="score" hidden>
-      <label class="field">Players
-        <input name="pcLabel" type="text" maxlength="40" placeholder="Players">
-      </label>
-      <label class="field">Hostiles
-        <input name="enemyLabel" type="text" maxlength="40" placeholder="Hostiles">
-      </label>
-    </div>
+    <label class="field">Hostiles
+      <input name="enemyLabel" type="text" maxlength="40" placeholder="Hostiles">
+    </label>
+  </div>
 
-    <div class="row">
-      <label class="field inline">Segments <select name="segments"></select></label>
-      <label class="check" data-only="progress"><input type="checkbox" name="countdown"> Countdown</label>
-    </div>
-    <label class="check"><input type="checkbox" name="shown" checked> Players see it straight away</label>
+  <div class="row">
+    <label class="field inline">Segments <select name="segments"></select></label>
+    <label class="check" data-only="progress"><input type="checkbox" name="countdown"> Countdown</label>
+  </div>
+  <label class="check" id="pinRow"><input type="checkbox" name="pinned"> Pin for players now</label>
 
-    <button type="submit" class="primary">Add clock</button>
-  </form>
-
-  <h2>Clocks in this room</h2>
-  <ul id="list"></ul>
-</section>
+  <div class="row">
+    <button type="button" id="cancel" class="ghost">Cancel</button>
+    <button type="submit" class="primary">Save</button>
+  </div>
+</form>
 
 <script type="module" src="popover.js"></script>
 </body>

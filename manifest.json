@@ -1,9 +1,9 @@
 {
   "name": "Lancer Clocks",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "manifest_version": 1,
   "author": "Random",
-  "description": "Lightweight progress clocks and score ladders for Lancer, shown as small overlays each player can move and resize.",
+  "description": "Lightweight progress clocks and score ladders for Lancer, in their own window. The GM pins clocks to share them with players.",
   "icon": "/lancer-clocks/icon.svg",
   "background_url": "/lancer-clocks/background.html",
   "action": {
@@ -11,6 +11,6 @@
     "icon": "/lancer-clocks/icon.svg",
     "popover": "/lancer-clocks/popover.html",
     "width": 340,
-    "height": 560
+    "height": 520
   }
 }
